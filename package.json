@@ -2,7 +2,7 @@
   "name": "mesto-react",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/phomdev/mesto-react#readme",
+  "homepage": "https://phomdev.github.io/mesto-react/",
   "description": "The project \"Mesto React\" of the course \"Web developer\" from Yandex Practicum",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
