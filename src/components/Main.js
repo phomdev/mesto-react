@@ -54,6 +54,7 @@ function Main (props) {
             name = { cardItem.name }
             likeCount = { cardItem.likes.length }
             onCardClick = { props.onCardClick }
+            onCardDelete = { props.onCardDelete }
             card = { cardItem } />
         )) }
       </section>
