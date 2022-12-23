@@ -7,4 +7,4 @@ const apiFindings = {
   }
 }
 // Экспортируем объект в index.js
-export { apiFindings };
+export default apiFindings;

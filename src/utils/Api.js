@@ -1,3 +1,5 @@
+import apiFindings from './apiFindings';
+
 class Api {
   constructor({ link, headers }) {
     this._link = link;
@@ -79,5 +81,8 @@ class Api {
       .then(res => { return this._processingServerResponse(res); })
   }
 }
+
+const apiConnect = new Api(apiFindings);
+
 // Экспорт класса
-export { Api };
+export default apiConnect;
