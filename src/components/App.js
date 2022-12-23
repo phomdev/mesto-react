@@ -43,7 +43,6 @@ function App () {
   }
 
   return (
-    <>
     <div className="page">
       < Header />
       < Main
@@ -74,7 +73,6 @@ function App () {
         type = 'delete-card'
         buttonText = 'Да' />
     </div>
-    </>
   );
 }
 

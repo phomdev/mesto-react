@@ -6,8 +6,7 @@ function Card (props) {
   function handleDelete () { props.onCardDelete(props.card) }
 
   return (
-    // props.keys названо для того, чтобы обойти ошибку ('key' is not a prop). Попытка доступа к key приведёт к undefined.
-    <div className="cards__item" key={ props.keys }>
+    <div className="cards__item">
       <button type="button" className="cards__delete" onClick={ handleDelete } aria-label="Удалить" />
       <img src={ props.link } className="cards__image" onClick={ handleClick } alt={ props.name } />
       <div className="cards__info">

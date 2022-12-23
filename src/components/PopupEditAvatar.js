@@ -8,8 +8,7 @@ function PopupEditAvatar (props) {
       onClose = { props.onClose }
       id = 'avatar-popup'
       title = 'Обновить аватар'
-      type = 'user-avatar'
-      buttonText = 'Сохранить' >
+      type = 'user-avatar' >
         <label htmlFor="avatar-input" className="popup__label">
           <input id="avatar-input" type="url" className="popup__input"
                  name="avatar" required placeholder="Введите ссылку на аватар" minLength="2" maxLength="200" />
