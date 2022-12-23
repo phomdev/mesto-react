@@ -13,7 +13,7 @@ function Card (props) {
         <h2 className="cards__description">{ props.name }</h2>
         <div className="cards__like-area">
           <button type="button" className="cards__like" aria-label="Like" />
-          <p className="cards__like-counter">{ props.likeCount }</p>
+          <p className="cards__like-counter">{ props.likeCount > 0 ? props.likeCount : null }</p>
         </div>
       </div>
     </div>
