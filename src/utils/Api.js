@@ -22,7 +22,7 @@ class Api {
       .then(res => { return this._processingServerResponse(res); })
   }
   // Метод добавления новой карточки на сервер
-  addNewCard ({ name, link }) {
+  addNewCard (name, link) {
     return fetch(`${this._link}cards`, {
       headers: this._headers,
       method: 'POST',
@@ -47,11 +47,11 @@ class Api {
       .then(res => { return this._processingServerResponse(res); })
   }
   // Метод отправки данных пользователя на сервер
-  sendUserData (profileData) {
+  sendUserData (userName, userAbout) {
     return fetch(`${this._link}users/me`, {
       headers: this._headers,
       method: 'PATCH',
-      body: JSON.stringify({ name: profileData.username, about: profileData.description })
+      body: JSON.stringify({ name: userName, about: userAbout })
     })
       .then(res => { return this._processingServerResponse(res); })
   }
@@ -64,21 +64,21 @@ class Api {
     })
       .then(res => { return this._processingServerResponse(res); })
   }
-  // Метод отправки лайка на сервер
-  putCardLike (cardId) {
-    return fetch(`${this._link}cards/${cardId}/likes`, {
-      headers: this._headers,
-      method: 'PUT',
-    })
+  // Метод обработки лайков карточки
+  changeLikeCardStatus (cardId, isLiked) {
+    if (isLiked) {
+      return fetch(`${this._link}cards/${cardId}/likes`, {
+        headers: this._headers,
+        method: 'PUT',
+      })
       .then(res => { return this._processingServerResponse(res); })
-  }
-  // Метод удаления лайка с сервера
-  deleteCardLike (cardId) {
-    return fetch(`${this._link}cards/${cardId}/likes`, {
-      headers: this._headers,
-      method: 'DELETE',
-    })
+    } else {
+      return fetch(`${this._link}cards/${cardId}/likes`, {
+        headers: this._headers,
+        method: 'DELETE',
+      })
       .then(res => { return this._processingServerResponse(res); })
+    }
   }
 }
 // Создание экземпляра класса
